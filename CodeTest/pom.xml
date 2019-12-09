@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>yuhao</groupId>
-    <artifactId>PenetrationTest</artifactId>
+    <artifactId>CodeTest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -17,22 +17,8 @@
                     <target>8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
         </plugins>
     </build>
 
-    <dependencies>
-
-        <!-- selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-
-    </dependencies>
 
 </project>

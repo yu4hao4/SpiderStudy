@@ -1,8 +1,7 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,8 +27,12 @@ public class Test {
     // 静态代码块，初始化 chrome 浏览器的 driver 包
     static {
         System.setProperty("webdriver.chrome.driver", chromeDriverAddress);
+
+        ChromeOptions chromeOptions=new ChromeOptions();
+        //设置 chrome 的无头模式
+        chromeOptions.addArguments("headless");
         // 创建了一个 Chrome driver 的实例
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions);
     }
 
     public static void main(String[] args) throws Exception {

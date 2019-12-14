@@ -21,21 +21,24 @@ public class StudyTest {
         // 获得Http客户端(可以理解为:你得先有一个浏览器;注意:实际上HttpClient与浏览器是不一样的)
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         // 创建Get请求
-        HttpGet httpGet = new HttpGet("https://asset.mucang.cn/");
+        HttpGet httpGet = new HttpGet("https://www.baidu.com/");
 
         // 响应模型
         CloseableHttpResponse response = null;
         try {
             // 由客户端执行(发送)Get请求
             response = httpClient.execute(httpGet);
-            System.out.println(JSONObject.parse(response.toString()));
             // 从响应模型中获取响应实体
             HttpEntity responseEntity = response.getEntity();
-            System.out.println("响应状态为:" + response.getStatusLine());
-            if (responseEntity != null) {
-                System.out.println("响应内容长度为:" + responseEntity.getContentLength());
-                System.out.println("响应内容为:" + EntityUtils.toString(responseEntity));
-            }
+            System.out.println("responseEntity.getContent().available"+responseEntity.getContent().available());
+            System.out.println("responseEntity.getContentEncoding()"+responseEntity.getContentEncoding());
+            System.out.println("getContentLength"+responseEntity.getContentLength());
+            System.out.println("getContentType"+responseEntity.getContentType());
+//            System.out.println("响应状态为:" + response.getStatusLine());
+//            if (responseEntity != null) {
+//                System.out.println("响应内容长度为:" + responseEntity.getContentLength());
+//                System.out.println("响应内容为:" + EntityUtils.toString(responseEntity));
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

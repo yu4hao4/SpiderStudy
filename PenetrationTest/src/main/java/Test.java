@@ -2,6 +2,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,8 +31,10 @@ public class Test {
 
         ChromeOptions chromeOptions=new ChromeOptions();
         //设置 chrome 的无头模式
-        chromeOptions.addArguments("headless");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--disable-gpu");
         // 创建了一个 Chrome driver 的实例
+        driver = new PhantomJSDriver();
         driver = new ChromeDriver(chromeOptions);
     }
 

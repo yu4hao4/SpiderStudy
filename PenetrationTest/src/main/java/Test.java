@@ -6,6 +6,7 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.regex.Pattern;
 
 /**
@@ -26,22 +27,26 @@ public class Test {
     private static String urlRegex = "^[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
 
     // 静态代码块，初始化 chrome 浏览器的 driver 包
-    static {
-        System.setProperty("webdriver.chrome.driver", chromeDriverAddress);
-
-        ChromeOptions chromeOptions=new ChromeOptions();
-        //设置 chrome 的无头模式
-        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--disable-gpu");
-        // 创建了一个 Chrome driver 的实例
-        driver = new PhantomJSDriver();
-        driver = new ChromeDriver(chromeOptions);
-    }
+//    static {
+//        System.setProperty("webdriver.chrome.driver", chromeDriverAddress);
+//
+//        ChromeOptions chromeOptions=new ChromeOptions();
+//        //设置 chrome 的无头模式
+//        chromeOptions.addArguments("--headless");
+//        chromeOptions.addArguments("--disable-gpu");
+//        // 创建了一个 Chrome driver 的实例
+//        driver = new PhantomJSDriver();
+//        driver = new ChromeDriver(chromeOptions);
+//    }
 
     public static void main(String[] args) throws Exception {
         //https://blog.csdn.net/qq_25384945/article/details/81219075
 //        getScreenPhoto("www.baidu.com");
-        getScreenPhoto("blog.csdn.net/qq_25384945/article/details/81219075");
+//        getScreenPhoto("blog.csdn.net/qq_25384945/article/details/81219075");
+
+        Properties props=System.getProperties();
+        String osName = props.getProperty("os.name");
+        System.out.println(osName);
     }
 
     /**

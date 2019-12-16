@@ -41,7 +41,7 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
         //https://blog.csdn.net/qq_25384945/article/details/81219075
-//        getScreenPhoto("www.baidu.com");
+//        getScreenPhoto("www.baidu.com");111
 //        getScreenPhoto("blog.csdn.net/qq_25384945/article/details/81219075");
 
         Properties props=System.getProperties();

@@ -36,7 +36,7 @@ public class Test {
 //        chromeOptions.addArguments("--disable-gpu");
 //        // 创建了一个 Chrome driver 的实例
 //        driver = new PhantomJSDriver();
-//        driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver(chromeOptions);1
 //    }
 
     public static void main(String[] args) throws Exception {
